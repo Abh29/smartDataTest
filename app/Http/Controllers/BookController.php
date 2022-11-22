@@ -17,7 +17,7 @@ class BookController extends Controller
     public function index()
     {
         $books = Book::paginate(15);
-        return view('main\book\index', ['books' => $books]);
+        return view('main.book.index', ['books' => $books]);
     }
 
     /**
@@ -82,7 +82,7 @@ class BookController extends Controller
         $book = Book::find($id);
         if ($book == null)
             abort(404);
-        return view('main\book\details', ['book' => $book]);
+        return view('main.book.details', ['book' => $book]);
     }
 
     /**
@@ -96,7 +96,7 @@ class BookController extends Controller
         $book = Book::find($id);
         if ($book == null) abort(404);
         $authors = Author::all();
-        return view('admin\book\edit', ['book' => $book, 'authors' => $authors]);
+        return view('admin.book.edit', ['book' => $book, 'authors' => $authors]);
     }
 
     /**

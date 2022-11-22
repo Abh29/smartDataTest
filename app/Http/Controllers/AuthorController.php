@@ -19,7 +19,7 @@ class AuthorController extends Controller
     public function index()
     {
         $authors = Author::paginate(6);
-        return view('main\author\index', ['authors' => $authors]);
+        return view('main.author.index', ['authors' => $authors]);
     }
 
     /**
@@ -77,7 +77,7 @@ class AuthorController extends Controller
         $author = Author::find($id);
         if ($author == null)
             abort(404);
-        return view('main\author\details', ['author' => $author]);
+        return view('main.author.details', ['author' => $author]);
     }
 
     /**
@@ -91,7 +91,7 @@ class AuthorController extends Controller
         $author = Author::find($id);
         if ($author == null)
             abort(404);
-        return view('admin\author\edit', ['author' => $author]);
+        return view('admin.author.edit', ['author' => $author]);
     }
 
     /**
