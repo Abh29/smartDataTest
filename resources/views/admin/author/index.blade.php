@@ -1,4 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.app', [
+    'active_nav' => 'dashboard'
+])
 
 <link rel="stylesheet" href="{{asset('css/app.css')}}">
 

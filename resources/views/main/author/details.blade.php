@@ -1,4 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.app', [
+  'page_title' => " - Author: {$author->nick}",
+  'active_nav' => 'author'
+])
 
 @section('content')
     <div class="container">

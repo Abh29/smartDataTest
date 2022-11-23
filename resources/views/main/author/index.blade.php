@@ -1,10 +1,12 @@
-@extends('layouts.app')
+@extends('layouts.app', [
+    'page_title' => ' - Authors',
+    'active_nav' => 'author'
+])
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            
 
             @foreach ($authors  as $author)
                 <div class="author_card_wrapper">

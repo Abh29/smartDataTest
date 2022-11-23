@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,17 +16,17 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/home', function () {
-    return redirect('/admin');
+    return redirect(route('author.index'));
 });
 
 
-Auth::routes(['register' => false]);
+Auth::routes(['register' => false, 'login' => false]);
+Route::get('/admin', 'App\Http\Controllers\Auth\LoginController@showLoginForm')->name('login');
+Route::post('/admin', 'App\Http\Controllers\Auth\LoginController@login');
+Route::get('/home', function() {
+    return redirect(route('admin.author.index'));
+});
 
-Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(["as" => "book.", "prefix" => "books"], function () {
    
@@ -68,8 +69,7 @@ Route::group(["as" => "author.", "prefix" => "authors"], function () {
 
 
 Route::group(["as" => "admin.", "prefix" => "admin", "middleware" => "auth"], function () {
-   
-        
+      
     Route::group(["as" => "author.", "prefix" => "authors"], function () {
     
         Route::get(

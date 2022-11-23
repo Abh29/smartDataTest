@@ -1,11 +1,13 @@
-@extends('layouts.app')
+@extends('layouts.app', [
+  'page_title' => " - Books",
+  'active_nav' => 'book'
+])
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             
-
             @foreach ($books as $book)
                 <div class="book_card_wrapper">
                     <div class="row">

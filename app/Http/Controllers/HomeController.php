@@ -25,19 +25,19 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return redirect(route('admin.author.index'));
     }
 
     public function books()
     {
         $books = Book::paginate(5);
-        return view('admin\book\index', ['books' => $books]);
+        return view('admin.book.index', ['books' => $books]);
     }
 
     public function authors()
     {
         $authors = Author::paginate(5);
-        return view('admin\author\index', ['authors' => $authors]);
+        return view('admin.author.index', ['authors' => $authors]);
     }
 
 
