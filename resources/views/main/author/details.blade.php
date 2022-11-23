@@ -12,7 +12,7 @@
                   <div class="card">
                     <div class="card-body">
                       <div class="d-flex flex-column align-items-center text-center">
-                        <img src="{{asset($author->picture)}}" alt="profile" class="rounded-circle" width="150">
+                        <img src="{{ asset($author->picture) }}" alt="profile" class="rounded-circle" width="150">
                         <div class="mt-3">
                           <h4>{{$author->nick}}</h4>
                         </div>
@@ -67,8 +67,15 @@
             </div>
         </div>
 
+        <div class="div">
+          <h3>{{ __('About the Author') }}</h3>
+          <p>{{ $author->about_author }}</p>
+        </div>
+
+        <div class="author-books">
+          <h3>Books: </h3>
         @foreach ($author->books as $book)
-                <div class="book_card_wrapper pt-5">
+                <div class="book_card_wrapper">
                     <div class="row">
                         <div class="col-md-4">
                             <figure>
@@ -76,7 +83,7 @@
                             </figure>
                         </div>
                         <div class="col-md-8 ">
-                            <div class="book_card_info">
+                            <div class="book_card_info mt-5">
                                 <div class="book_card_title">
                                     <h5><a href="{{route('book.details', ['id' => $book->id])}}">{{__($book->title)}}</a></h5>
                                 </div>
@@ -93,7 +100,7 @@
                     </div>
                 </div>
             @endforeach
-
+        </div>
    
 </div>
 @endsection

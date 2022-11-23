@@ -18,7 +18,7 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        $authors = Author::paginate(6);
+        $authors = Author::paginate(12);
         return view('main.author.index', ['authors' => $authors]);
     }
 
@@ -47,7 +47,8 @@ class AuthorController extends Controller
             'name' => 'required|max:255',
             'nick' => 'required|max:255',
             'birth_date' => 'required|date',
-            'picture' => 'nullable|mimes:jpg,bmp,png|max:2048'
+            'picture' => 'nullable|mimes:jpg,bmp,png|max:2048',
+            'about_author' => 'max:5000',
         ]); 
         
 
@@ -60,6 +61,7 @@ class AuthorController extends Controller
         $author->name = $request->get('name');
         $author->nick = $request->get('nick');
         $author->birth_date = $request->get('birth_date');
+        $author->about_author = $request->get('about_author');
 
         $author->save();
 
@@ -111,7 +113,8 @@ class AuthorController extends Controller
             'name' => 'required|max:255',
             'nick' => 'required|max:255',
             'birth_date' => 'required|date',
-            'picture' => 'mimes:jpg,bmp,png|max:2048'
+            'picture' => 'mimes:jpg,bmp,png|max:2048',
+            'about_author' => 'max:5000',
         ]);     
 
         if($request->file()) {
@@ -123,6 +126,7 @@ class AuthorController extends Controller
         $author->name = $request->get('name');
         $author->nick = $request->get('nick');
         $author->birth_date = $request->get('birth_date');
+        $author->about_author = $request->get('about_author');
 
         $author->save();
 

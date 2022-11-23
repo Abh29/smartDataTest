@@ -49,7 +49,8 @@ class BookController extends Controller
             'publisher' => 'required|max:255',
             'edition' => 'required|max:255',
             'pages' => 'required|integer',
-            'cover_picture' => 'nullable|mimes:jpg,bmp,png|max:2048'
+            'cover_picture' => 'nullable|mimes:jpg,bmp,png|max:2048',
+            'book_text' => ''
         ]);
 
         if($request->file()) {
@@ -64,6 +65,7 @@ class BookController extends Controller
         $book->publisher = $request->get('publisher');
         $book->edition = $request->get('edition');
         $book->pages_count = (int)($request->get('pages'));
+        $book->book_text = $request->get('book_text');
 
         $book->save();
 
@@ -119,7 +121,8 @@ class BookController extends Controller
             'description' => 'required|max:2000',
             'publisher' => 'required|max:255',
             'edition' => 'required|max:255',
-            'cover_picture' => 'mimes:jpg,bmp,png|max:2048'
+            'cover_picture' => 'mimes:jpg,bmp,png|max:2048',
+            'book_text' => ''
         ]);     
 
         if($request->file()) {
@@ -133,6 +136,7 @@ class BookController extends Controller
         $book->description = $request->get('description');
         $book->publisher = $request->get('publisher');
         $book->edition = $request->get('edition');
+        $book->book_text = $request->get('book_text');
 
         $book->save();
 

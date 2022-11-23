@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('nick')->nullable();
             $table->date('birth_date')->nullable();
-            $table->string('picture')->default('storage/images/author_placeholder.png');
+            $table->string('picture')->default('storage/static_images/author_placeholder.png');
+            $table->text('about_author')->default("");
             $table->timestamps();
 
             $table->index('name');

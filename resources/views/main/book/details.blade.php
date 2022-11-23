@@ -9,6 +9,7 @@
         <h2>{{$book->title}}</h2>
         <h4><a href="{{route('author.details', ['id' => $book->author->id])}}">{{$book->author->nick}}</a></h4>
 
+        <p>{{ $book->book_text }}</p>
 
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint perferendis quae repellendus quisquam placeat exercitationem, fugit officia quidem atque odit ea reiciendis, aperiam saepe laboriosam distinctio dolore dicta similique! Suscipit explicabo excepturi molestias officia soluta aliquam reiciendis temporibus veritatis in vel autem facere porro vero hic rem vitae, iste rerum enim natus minus! Voluptates earum dolore officia cupiditate quo tempora ullam iste, necessitatibus error, est, facere at sed ut sapiente eligendi perferendis vitae iure cum. Fugit consequatur perferendis omnis porro voluptatum quas, delectus nisi voluptate fuga eveniet similique vel, autem accusamus, laboriosam eius sit eum adipisci tempore accusantium. Sed, sunt?</p>
         

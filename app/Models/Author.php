@@ -11,7 +11,7 @@ class Author extends Model
 
 
     protected $fillable = [
-        'name', 'nick', 'birth_date', 'picture', 'updated_at', 'created_at'
+        'name', 'nick', 'birth_date', 'picture', 'about_author', 'updated_at', 'created_at'
     ];
 
     /**

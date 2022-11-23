@@ -24,6 +24,7 @@ class AuthorFactory extends Factory
             'name' => fake()->name(),
             'nick' => fake()->name(),
             'birth_date' => fake()->date(),
+            'about_author' => fake()->sentences(6, true),
         ];
     }
 }

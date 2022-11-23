@@ -17,7 +17,7 @@
                             </figure>
                         </div>
                         <div class="col-lg-6 col-md-12 col-sm-7 ">
-                            <div class="book_card_info">
+                            <div class="book_card_info mt-5">
                                 <div class="book_card_title">
                                     <h5><a href="{{route('book.details', ['id' => $book->id])}}">{{__($book->title)}}</a></h5>
                                 </div>

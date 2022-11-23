@@ -6,31 +6,28 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-
-            @foreach ($authors  as $author)
-                <div class="author_card_wrapper">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-12 col-sm-5">
-                            <figure>
-                                   <img src="{{asset( $author->picture)}}" alt=""/>
-                            </figure>
-                        </div>
-                        <div class="col-lg-6 col-md-12 col-sm-7 ">
-                            <div class="book_card_info">
-                                <div class="book_card_title">
-                                    <a href="{{route('author.details', ['id' => $author->id])}}"><h5>{{__($author->name)}}</h5></a>
-                                </div>
-                                <div class="author_nick">
-                                    <p>{{$author->nick}}</p>
-                                </div>
-                                <span>Has {{count($author->books)}} books</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            @endforeach
+        <div class="col-md-10">
+        
+        <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Nickname</th>
+                <th scope="col">Books count</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($authors as $author)
+                <tr class="expandable-row">
+                <th scope="row">{{ $author->id }}</th>
+                <td><a href="{{route('author.details', ['id' => $author->id])}}"><h5>{{__($author->name)}}</h5></a></td>
+                <td>{{ $author->nick}}</td>
+                <td>{{ count( $author->books ) }}</td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
 
 
             <div class="col-md-12">

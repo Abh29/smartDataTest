@@ -18,7 +18,7 @@
                         <div class="input-group mb-3">
                             <div class="custom-file">
                               <input type="file" class="custom-file-input form-control" id="cover_picture" name="cover_picture">
-                              <label class="custom-file-label" for="cover_picture">Choose file</label>
+                              <label class="custom-file-label" for="cover_picture">Choose a book cover</label>
                             </div>
                         </div>
 
@@ -75,6 +75,13 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="book_text" class="form-label col-md-4 col-form-label text-md-end">{{__('Book Text')}}</label>
+                            <div class="col-md-6">
+                                <textarea class="form-control" id="book_text" rows="6" style="resize: none" maxlength="5000" name="book_text">{{$book->book_text}}</textarea>
                             </div>
                         </div>
 

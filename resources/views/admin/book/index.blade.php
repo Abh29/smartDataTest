@@ -32,7 +32,7 @@
                                     @foreach ($books as $book)
                                             <li>
                                                 <figure><img src="{{asset($book->cover_picture)}}" alt=""></figure>
-                                                <h4>{{$book->title}}</h4>
+                                                <h4><a href="{{route('book.details', ['id' => $book->id])}}">{{__($book->title)}}</a></h4>
                                                 <ul class="booking_details">
                                                     <li><strong>Author</strong>{{$book->author->nick}}</li>
                                                     <li><strong>Edition</strong>{{$book->edition}}</li>

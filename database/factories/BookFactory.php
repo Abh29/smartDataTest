@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Author;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,7 @@ class BookFactory extends Factory
     public function definition()
     {
         return [
-            'author_id' => rand(1, 12),
+            'author_id' => rand(1, Author::count()),
             'title' => fake()->sentence('4'),
             'description' => fake()->text(200),
             'publisher' => fake()->company(),
@@ -25,7 +26,8 @@ class BookFactory extends Factory
             'printed_at' => fake()->date(),
             'language' => array_rand(['en', 'fr', 'ru'], 1),
             'pages_count' => rand(100, 500),
-            'rating' => rand(1, 5),
+            'rating' => rand(2, 5),
+            'book_text' => fake()->text(5000),
         ];
     }
 }

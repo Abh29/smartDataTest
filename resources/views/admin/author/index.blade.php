@@ -33,10 +33,10 @@
                                     @foreach ($authors as $author)
                                         <li>
                                             <figure><img src="{{asset($author->picture)}}" alt=""></figure>
-                                            <h4>{{$author->name}}</h4>
+                                            <h4><a href="{{ route('author.details', ['id' => $author->id]) }}"> {{$author->name}} </a></h4>
                                             <ul class="booking_details">
-                                                <li><strong>Author's Nick</strong> 11 November 2017</li>
-                                                <li><strong>Author's Birthdate</strong> 10.20AM</li>
+                                                <li><strong>Author's Nick</strong> {{ $author->nick }}</li>
+                                                <li><strong>Author's Birthdate</strong>{{ $author->birth_date }}</li>
                                             </ul>
                                             <ul class="buttons">
                                                 <li><a  href="{{route('admin.author.edit', ['id' => $author->id])}}" class="btn_1 gray info"><i class="fa fa-fw fa-check-circle-o"></i> Edit</a></li>

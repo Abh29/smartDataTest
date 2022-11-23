@@ -65,6 +65,14 @@
                             </div>
                         </div>
 
+                        <div class="row mb-3">
+                            <label for="about_author" class="form-label col-md-4 col-form-label text-md-end">{{__('About the author')}}</label>
+                            <div class="col-md-6">
+                                <textarea class="form-control" id="about_author" rows="6" style="resize: none" maxlength="5000" name="about_author">{{$author->about_author}}</textarea>
+                            </div>
+                        </div>
+
+
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
