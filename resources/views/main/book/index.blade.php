@@ -13,7 +13,7 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-12 col-sm-5">
                             <figure>
-                                   <img src="{{asset( $book->cover_picture)}}" alt=""/>
+                                   <img src="{{asset( $book->cover_picture)}}" alt="book cover" style="max-width: 300px; max-height: 300px;" />
                             </figure>
                         </div>
                         <div class="col-lg-6 col-md-12 col-sm-7 ">

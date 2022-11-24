@@ -79,7 +79,7 @@
                     <div class="row">
                         <div class="col-md-4">
                             <figure>
-                                   <img src="{{asset( $book->cover_picture)}}" alt=""/>
+                                   <img src="{{asset( $book->cover_picture)}}" alt="book cover" style="max-width: 300px; max-height: 300px;" />
                             </figure>
                         </div>
                         <div class="col-md-8 ">

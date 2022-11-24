@@ -14,7 +14,7 @@
 
 
                         <div class="row mb-3">
-                            <img src="{{asset( $author->picture)}}" class="rounded mx-auto d-block" alt="author_profile"/>
+                            <img src="{{asset( $author->picture)}}" class="rounded mx-auto d-block" alt="author_profile" style="max-width: 100%" />
                         </div>
                         <div class="input-group mb-3">
                             <div class="custom-file">

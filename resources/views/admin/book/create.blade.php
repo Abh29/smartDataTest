@@ -92,7 +92,7 @@
                         <div class="row mb-3">
                             <label for="book_text" class="form-label col-md-4 col-form-label text-md-end">{{__('Book Text')}}</label>
                             <div class="col-md-6">
-                                <textarea class="form-control" id="book_text" rows="6" style="resize: none" maxlength="5000" name="book_text">{{$book->book_text}}</textarea>
+                                <textarea class="form-control" id="book_text" rows="6" style="resize: none" maxlength="5000" name="book_text"></textarea>
                             </div>
                         </div>
 
