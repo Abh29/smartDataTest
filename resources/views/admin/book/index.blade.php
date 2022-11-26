@@ -34,7 +34,7 @@
                                                 <figure><img src="{{asset($book->cover_picture)}}" alt=""></figure>
                                                 <h4><a href="{{route('book.details', ['id' => $book->id])}}">{{__($book->title)}}</a></h4>
                                                 <ul class="booking_details">
-                                                    <li><strong>Author</strong>{{$book->author->nick}}</li>
+                                                    <li><strong>Author</strong><a href="{{ route('author.details', ['id' => $book->author->id]) }}"> {{$book->author->nick}} </a></li>
                                                     <li><strong>Edition</strong>{{$book->edition}}</li>
                                                     <li><strong>Publisher</strong>{{$book->publisher}}</li>
                                                     <li><strong>description</strong>{{$book->description}}</li>

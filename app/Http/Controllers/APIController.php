@@ -16,11 +16,6 @@ class APIController extends Controller
     }
 
 
-    public function store(Request $request)
-    {
-        return 'hello store';
-    }
-
     public function show(int $id)
     {
         $book = Book::find($id);
@@ -35,19 +30,19 @@ class APIController extends Controller
 
         $data = $request->validate([
             'id' => 'required|numeric',
-            'title' => 'bail|required|max:255',
-            'author_id' => ['required', 'numeric', Rule::In($authors)],
-            'description' => 'required|max:2000',
-            'publisher' => 'required|max:255',
-            'edition' => 'required|max:255',
+            'title' => 'nullable|max:255',
+            'author_id' => ['nullable', 'numeric', Rule::In($authors)],
+            'description' => 'nullable|max:2000',
+            'publisher' => 'nullable|max:255',
+            'edition' => 'nullable|max:255',
         ]);
 
         $book = Book::find($data['id']);
         if ($book == null)
-            return response()->json(['error' => 'Book not found'], 404);
+            return response()->json(['error' => 'Book not found.'], 422);
 
 
-        $book->update($request->all());
+        $book->update($data);
         return response()->json($book, 200);
     }
 
@@ -55,7 +50,7 @@ class APIController extends Controller
     {
         $book = Book::find($id);
         if ($book == null)
-            return response()->json(['error' => 'Resource not found'], 404);
+            return response()->json(['error' => 'Resource not found.'], 404);
         $book->delete();
         return response()->json(null, 204);
     }

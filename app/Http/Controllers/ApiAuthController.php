@@ -17,10 +17,8 @@ class ApiAuthController extends Controller
             ]);
 
             $user = User::where('email', $data['email'])->first();
-            if (! $user || ! Hash::check($data['password'], $user->password))
-                return Response([
-                    'error' => 'Wrong email or password'
-                ], 401);
+            if ( ! $user || ! Hash::check($data['password'], $user->password))
+                return Response(['error' => 'Wrong email or password'], 401);
         
             $app_key = env('APP_KEY', 'some_application_key');
             $token = $user->createToken($app_key)->plainTextToken;

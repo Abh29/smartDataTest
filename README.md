@@ -34,5 +34,8 @@
 - The route: DELETE /api/v1/books/{id} let's you delete a book by id   
     you need to provide a valid token as a parameter
 
-
-
+### To test the Api run sail artisan test
+![screen/test.png](screen/test.png)
+### you can also run it with sail artisan test --coverage  
+    but this requires xdebug to be installed
+![screen/test_coverage.png](screen/test_coverage.png)

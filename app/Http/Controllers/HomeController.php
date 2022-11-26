@@ -30,13 +30,13 @@ class HomeController extends Controller
 
     public function books()
     {
-        $books = Book::paginate(5);
+        $books = Book::orderBy('created_at', 'DESC')->paginate(5);
         return view('admin.book.index', ['books' => $books]);
     }
 
     public function authors()
     {
-        $authors = Author::paginate(5);
+        $authors = Author::orderBy('created_at', 'DESC')->paginate(5);
         return view('admin.author.index', ['authors' => $authors]);
     }
 

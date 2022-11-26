@@ -35,8 +35,9 @@
                                             <figure><img src="{{asset($author->picture)}}" alt=""></figure>
                                             <h4><a href="{{ route('author.details', ['id' => $author->id]) }}"> {{$author->name}} </a></h4>
                                             <ul class="booking_details">
-                                                <li><strong>Author's Nick</strong> {{ $author->nick }}</li>
-                                                <li><strong>Author's Birthdate</strong>{{ $author->birth_date }}</li>
+                                                <li><strong class="mr-5">Author's Nick</strong>      {{ $author->nick }}</li>
+                                                <li><strong class="mr-5">Books count</strong>        {{ count($author->books) }}</li>
+                                                <li><strong class="mr-5">Author's Birthdate</strong> {{ $author->birth_date }}</li>
                                             </ul>
                                             <ul class="buttons">
                                                 <li><a  href="{{route('admin.author.edit', ['id' => $author->id])}}" class="btn_1 gray info"><i class="fa fa-fw fa-check-circle-o"></i> Edit</a></li>

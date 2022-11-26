@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Edit Book') }}</div>
+                <div class="card-header">{{ __('Update a Book') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{route('admin.book.update', ['id' => $book->id])}}" enctype="multipart/form-data">
@@ -88,7 +88,7 @@
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
+                                    {{ __('Edit') }}
                                 </button>
                             </div>
                         </div>
